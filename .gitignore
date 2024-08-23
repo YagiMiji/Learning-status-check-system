@@ -1,0 +1,7 @@
+# Directories
+.venv/
+.vscode/
+bin/
+bin-int/
+
+# Files

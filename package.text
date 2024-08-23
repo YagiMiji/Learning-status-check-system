@@ -1,0 +1,1 @@
+pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
