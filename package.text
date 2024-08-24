@@ -1,2 +1,12 @@
-CPU:    pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
-GPU:    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+CPU:
+pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+GPU:
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+CUDA Tookit
+
+or
+
+pip3 install torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip uninstall torch
+pip3 install torch-directml -i https://pypi.tuna.tsinghua.edu.cn/simple

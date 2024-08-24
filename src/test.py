@@ -2,6 +2,14 @@ import torch
 import torch.cuda
 import torch.nn as nn
 import numpy as np
+import importlib.util as importlib_util
+
+# 是否开启dx_torch替代cuda
+if importlib_util.find_spec(torch_directml):
+    import torch_directml
+    device = torch_directml.device()
+else:
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # 定义一个线性回归模型类，它是继承自nn.Module的
 class LinearRegressionModel(nn.Module):
@@ -36,13 +44,8 @@ def run():
     output_dim = 1
     # 创建一个线性回归模型实例
     model = LinearRegressionModel(input_dim, output_dim)
-    print(model)
-
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
-    # 设置训练的迭代次数（即遍历数据集的次数）
-    epochs = 1000
     # 设置学习率，用于模型参数更新的步长
     learning_rate = 0.001
     # 使用随机梯度下降（SGD）作为优化器来更新模型参数
@@ -50,6 +53,8 @@ def run():
     # 使用均方误差（MSE）作为损失函数，评估模型预测值和真实值之间的误差
     criterion = nn.MSELoss()
 
+    # 设置训练的迭代次数（即遍历数据集的次数）
+    epochs = 2000
     for epoch in range(epochs):
         epoch += 1
 
