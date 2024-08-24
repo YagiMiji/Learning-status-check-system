@@ -1,1 +1,2 @@
-pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+CPU:    pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+GPU:    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
