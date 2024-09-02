@@ -5,7 +5,7 @@ import numpy as np
 import importlib.util as importlib_util
 
 # 是否开启dx_torch替代cuda
-if importlib_util.find_spec(torch_directml):
+if importlib_util.find_spec('torch_directml'):
     import torch_directml
     device = torch_directml.device()
 else:
