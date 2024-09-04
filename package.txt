@@ -1,12 +1,21 @@
+1. PyTroch
 CPU:
 pip3 install torch torchvision torchaudio -i https://pypi.tuna.tsinghua.edu.cn/simple
 
+or
+
 GPU:
+CUDA Tookit:
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
-CUDA Tookit
 
 or
 
+DX_Torch:
 pip3 install torchvision -i https://pypi.tuna.tsinghua.edu.cn/simple
 pip uninstall torch
 pip3 install torch-directml -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+2. Opencv:
+pip install opencv-python -i https://pypi.tuna.tsinghua.edu.cn/simple
+pip install opencv-contrib-python -i https://pypi.tuna.tsinghua.edu.cn/simple
