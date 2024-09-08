@@ -7,9 +7,11 @@ import importlib.util as importlib_util
 # 是否开启dx_torch替代cuda
 if importlib_util.find_spec('torch_directml'):
     import torch_directml
+
     device = torch_directml.device()
 else:
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 
 # 定义一个线性回归模型类，它是继承自nn.Module的
 class LinearRegressionModel(nn.Module):
@@ -23,6 +25,7 @@ class LinearRegressionModel(nn.Module):
     def forward(self, x):
         out = self.linear(x)
         return out
+
 
 def run():
     x_values = [i for i in range(11)]
@@ -75,6 +78,7 @@ def run():
 
     predicted = model(torch.from_numpy(x_train).to(device)).cpu().data.numpy()
     print(predicted)
+
 
 if __name__ == "__main__":
     # 打印当前安装的PyTorch版本

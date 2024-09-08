@@ -1,7 +1,16 @@
 # Directories
+.idea/
 .venv/
 .vscode/
 bin/
 bin-int/
+out/
+
+__pycache__/
+
+data/
+flower_data/
+student_status_data/
 
 # Files
+*.pth
